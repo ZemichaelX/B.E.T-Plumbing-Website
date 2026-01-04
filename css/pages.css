@@ -1,0 +1,356 @@
+/* 
+ * Additional Page-Specific Styles
+ * Enhanced visual elements and premium touches
+ */
+
+/* ========================================
+   ENHANCED HERO SECTION
+   ======================================== */
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-primary));
+  z-index: 2;
+}
+
+/* ========================================
+   PREMIUM SERVICE CARDS
+   ======================================== */
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-600), var(--color-primary-400));
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card-icon {
+  position: relative;
+  transition: transform var(--transition-base);
+}
+
+.service-card:hover .service-card-icon {
+  transform: scale(1.1);
+}
+
+/* ========================================
+   ANIMATED TRUST BADGES
+   ======================================== */
+
+.trust-badge {
+  transition: transform var(--transition-base);
+}
+
+.trust-badge:hover {
+  transform: translateY(-4px);
+}
+
+/* ========================================
+   PREMIUM BUTTONS
+   ======================================== */
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+  border-radius: inherit;
+}
+
+.btn:hover::before {
+  transform: translateX(100%);
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ========================================
+   REVIEW CARDS ENHANCEMENT
+   ======================================== */
+
+.review-card {
+  transition: all var(--transition-base);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary-200);
+}
+
+/* ========================================
+   FEATURE ITEMS ANIMATION
+   ======================================== */
+
+.feature-item {
+  transition: transform var(--transition-base);
+}
+
+.feature-item:hover {
+  transform: translateX(4px);
+}
+
+.feature-icon {
+  transition: all var(--transition-base);
+}
+
+.feature-item:hover .feature-icon {
+  background-color: var(--color-primary-600);
+  transform: rotate(5deg);
+}
+
+.feature-item:hover .feature-icon svg {
+  fill: white;
+}
+
+/* ========================================
+   SECTION ANIMATIONS (Fade in on scroll)
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-on-scroll {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ========================================
+   ENHANCED CTA BANNER
+   ======================================== */
+
+.cta-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(240deg);
+  }
+}
+
+/* ========================================
+   FOOTER ENHANCEMENTS
+   ======================================== */
+
+.footer-section a {
+  position: relative;
+  display: inline-block;
+}
+
+.footer-section a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-primary-400);
+  transition: width var(--transition-fast);
+}
+
+.footer-section a:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   FORM ENHANCEMENTS
+   ======================================== */
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  transform: translateY(-2px);
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-input:focus + .form-label,
+.form-select:focus + .form-label,
+.form-textarea:focus + .form-label {
+  color: var(--color-primary-600);
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+
+.btn.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.btn.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid transparent;
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   GLASS MORPHISM EFFECTS
+   ======================================== */
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ========================================
+   ENHANCED HERO SECTION
+   ======================================== */
+
+.hero {
+  position: relative;
+  background-attachment: fixed;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, var(--color-bg-primary));
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    transform: none !important;
+  }
+  
+  .service-card:active {
+    transform: scale(0.98) !important;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .header,
+  .footer,
+  .sticky-call-btn,
+  .nav-overlay,
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+  
+  .section {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-4);
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary-600);
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-primary,
+  .btn-accent {
+    border: 2px solid currentColor;
+  }
+  
+  .service-card,
+  .review-card {
+    border: 2px solid var(--color-gray-800);
+  }
+}
